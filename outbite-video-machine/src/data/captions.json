@@ -1,0 +1,101 @@
+{
+  "version": "B",
+  "captions": [
+    {
+      "id": "cap-01",
+      "speaker": "right",
+      "startSeconds": 0.15,
+      "endSeconds": 3.2,
+      "text": "Same restaurant. Same Big Mac.",
+      "emphasis": ["Big Mac"]
+    },
+    {
+      "id": "cap-02",
+      "speaker": "right",
+      "startSeconds": 3.2,
+      "endSeconds": 6.27,
+      "text": "The side you pick changes everything.",
+      "emphasis": ["side", "everything"]
+    },
+    {
+      "id": "cap-03",
+      "speaker": "left",
+      "startSeconds": 6.27,
+      "endSeconds": 10.04,
+      "text": "But the fries look so good… how do I even compare?",
+      "emphasis": ["fries", "compare"]
+    },
+    {
+      "id": "cap-04",
+      "speaker": "right",
+      "startSeconds": 10.04,
+      "endSeconds": 13.0,
+      "text": "Fries can add hundreds of extra calories.",
+      "emphasis": ["hundreds", "calories"]
+    },
+    {
+      "id": "cap-05",
+      "speaker": "right",
+      "startSeconds": 13.0,
+      "endSeconds": 16.06,
+      "text": "I scan the menu with Outbite first.",
+      "emphasis": ["Outbite"]
+    },
+    {
+      "id": "cap-06",
+      "speaker": "left",
+      "startSeconds": 16.06,
+      "endSeconds": 19.1,
+      "text": "How do I know what's better for my goals?",
+      "emphasis": ["goals"]
+    },
+    {
+      "id": "cap-07",
+      "speaker": "left",
+      "startSeconds": 19.1,
+      "endSeconds": 22.01,
+      "text": "Every option looks the same to me.",
+      "emphasis": ["same"]
+    },
+    {
+      "id": "cap-08",
+      "speaker": "right",
+      "startSeconds": 22.01,
+      "endSeconds": 25.6,
+      "text": "Outbite recommends the best fit for you.",
+      "emphasis": ["Outbite", "best fit"]
+    },
+    {
+      "id": "cap-09",
+      "speaker": "right",
+      "startSeconds": 25.6,
+      "endSeconds": 28.6,
+      "text": "Big Mac + baked potato — smarter pick.",
+      "emphasis": ["smarter pick"]
+    },
+    {
+      "id": "cap-10",
+      "speaker": "right",
+      "startSeconds": 28.6,
+      "endSeconds": 30.21,
+      "text": "Same craving. Better choice.",
+      "emphasis": ["Better choice"]
+    },
+    {
+      "id": "cap-11",
+      "speaker": "left",
+      "startSeconds": 30.21,
+      "endSeconds": 33.2,
+      "text": "Okay… show me the smarter order.",
+      "emphasis": ["smarter order"]
+    },
+    {
+      "id": "cap-12",
+      "speaker": "left",
+      "startSeconds": 33.2,
+      "endSeconds": 34.0,
+      "text": "I'm listening.",
+      "emphasis": []
+    }
+  ]
+}

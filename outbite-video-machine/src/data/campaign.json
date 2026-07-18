@@ -1,0 +1,121 @@
+{
+  "id": "big-mac-sides-0718",
+  "version": "B",
+  "title": "Big Mac + Fries vs Big Mac + Baked Potato",
+  "brand": {
+    "name": "Outbite",
+    "tagline": "Same restaurant. Smarter choice.",
+    "primaryColor": "#1FA64A",
+    "accentColor": "#C8F06C",
+    "darkColor": "#142018",
+    "lightColor": "#F2F7F3"
+  },
+  "video": {
+    "source": "source/0718-1080.mp4",
+    "width": 1080,
+    "height": 1920,
+    "fps": 60,
+    "durationSeconds": 39.266667,
+    "durationInFrames": 2356,
+    "muteOriginalAudio": true,
+    "originalAudioVolume": 0
+  },
+  "characters": {
+    "left": {
+      "id": "impulse",
+      "label": "Impulse Choice",
+      "shortLabel": "Impulse"
+    },
+    "right": {
+      "id": "outbite",
+      "label": "Outbite Choice",
+      "shortLabel": "Outbite"
+    }
+  },
+  "meals": {
+    "left": {
+      "name": "Big Mac + Fries",
+      "items": ["Big Mac", "Medium Fries"],
+      "calories": 1080,
+      "protein": 28,
+      "highlight": false,
+      "badge": "Higher cal"
+    },
+    "right": {
+      "name": "Big Mac + Potato",
+      "items": ["Big Mac", "Baked Potato"],
+      "calories": 780,
+      "protein": 34,
+      "highlight": true,
+      "badge": "Smarter pick"
+    }
+  },
+  "nutritionNote": "Illustrative estimates for demo — not restaurant-verified values.",
+  "disclaimer": "Nutrition figures are estimates for marketing demonstration only. Always verify with restaurant nutrition info and your own goals.",
+  "cta": {
+    "headline": "Same restaurant. Smarter choice.",
+    "subhead": "Scan the menu. Hit your goals.",
+    "button": "Try Outbite",
+    "startSeconds": 34.0,
+    "endSeconds": 39.266667
+  },
+  "overlays": {
+    "subtitleCover": true,
+    "foodHeaderStyle": "glass"
+  },
+  "regions": {
+    "foodHeader": {
+      "top": 0,
+      "bottom": 0.145,
+      "left": 0,
+      "right": 1
+    },
+    "subtitlePanel": {
+      "top": 0.705,
+      "bottom": 0.825,
+      "left": 0.06,
+      "right": 0.94
+    },
+    "captionSafe": {
+      "left": 0.08,
+      "right": 0.92,
+      "top": 0.715,
+      "bottom": 0.815
+    },
+    "speakerLabels": {
+      "leftX": 0.055,
+      "rightX": 0.945,
+      "y": 0.64
+    }
+  },
+  "appDemo": {
+    "enabled": true,
+    "startSeconds": 23.2,
+    "endSeconds": 29.8,
+    "side": "right",
+    "headline": "Outbite scan",
+    "lines": [
+      "Scan menu",
+      "Compare sides",
+      "Best fit for goals"
+    ]
+  },
+  "audio": {
+    "voiceDir": "audio/",
+    "lines": [
+      { "id": "line-01", "file": "audio/line-01.wav", "startSeconds": 0.15, "endSeconds": 3.2, "enabled": false },
+      { "id": "line-02", "file": "audio/line-02.wav", "startSeconds": 3.2, "endSeconds": 6.27, "enabled": false },
+      { "id": "line-03", "file": "audio/line-03.wav", "startSeconds": 6.27, "endSeconds": 10.04, "enabled": false },
+      { "id": "line-04", "file": "audio/line-04.wav", "startSeconds": 10.04, "endSeconds": 13.0, "enabled": false },
+      { "id": "line-05", "file": "audio/line-05.wav", "startSeconds": 13.0, "endSeconds": 16.06, "enabled": false },
+      { "id": "line-06", "file": "audio/line-06.wav", "startSeconds": 16.06, "endSeconds": 19.1, "enabled": false },
+      { "id": "line-07", "file": "audio/line-07.wav", "startSeconds": 19.1, "endSeconds": 22.01, "enabled": false },
+      { "id": "line-08", "file": "audio/line-08.wav", "startSeconds": 22.01, "endSeconds": 25.6, "enabled": false },
+      { "id": "line-09", "file": "audio/line-09.wav", "startSeconds": 25.6, "endSeconds": 28.6, "enabled": false },
+      { "id": "line-10", "file": "audio/line-10.wav", "startSeconds": 28.6, "endSeconds": 30.21, "enabled": false },
+      { "id": "line-11", "file": "audio/line-11.wav", "startSeconds": 30.21, "endSeconds": 33.2, "enabled": false },
+      { "id": "line-12", "file": "audio/line-12.wav", "startSeconds": 33.2, "endSeconds": 34.0, "enabled": false }
+    ],
+    "useVoiceOverWhenPresent": true
+  }
+}

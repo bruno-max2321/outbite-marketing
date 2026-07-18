@@ -1,0 +1,11 @@
+﻿# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+
+# Oversized local masters (>100MB; GitHub LFS budget unavailable on this account)
+0718.mp4
+outbite-video-machine/public/source/0718.mp4
+outbite-video-machine/public/source/original.mp4

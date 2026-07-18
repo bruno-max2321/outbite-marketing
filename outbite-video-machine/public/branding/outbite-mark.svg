@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="28" fill="#1FA64A"/>
+  <path d="M28 74c10-28 22-42 32-42s22 14 32 42" stroke="#C8F06C" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="60" cy="42" r="10" fill="#F2F7F3"/>
+  <text x="60" y="98" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#F2F7F3">OB</text>
+</svg>

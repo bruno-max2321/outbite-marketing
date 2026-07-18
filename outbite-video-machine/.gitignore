@@ -1,0 +1,11 @@
+node_modules/
+out/
+dist/
+.DS_Store
+*.log
+.remotion/
+public/audio/raw/
+public/audio/*.wav
+public/audio/*.mp3
+public/audio/*.m4a
+!public/audio/README.md

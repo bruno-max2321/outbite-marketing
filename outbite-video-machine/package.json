@@ -1,0 +1,34 @@
+{
+  "name": "outbite-video-machine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion video machine — Outbite English promo overlays on clean split-screen comparison footage",
+  "scripts": {
+    "studio": "remotion studio",
+    "start": "remotion studio",
+    "build": "remotion bundle",
+    "render": "remotion render OutbiteComparison out/outbite-comparison.mp4 --codec=h264 --pixel-format=yuv420p",
+    "render:preview": "remotion render OutbiteComparison out/preview.mp4 --codec=h264 --pixel-format=yuv420p --scale=0.5",
+    "render:campaign": "node scripts/render-variants.mjs",
+    "inspect": "node scripts/inspect-video.mjs",
+    "prepare-audio": "node scripts/prepare-audio.mjs",
+    "typecheck": "tsc --noEmit",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.491",
+    "@remotion/google-fonts": "^4.0.491",
+    "@remotion/media-utils": "^4.0.491",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remotion": "^4.0.491",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "prettier": "^3.9.5",
+    "typescript": "^5.9.3"
+  }
+}
