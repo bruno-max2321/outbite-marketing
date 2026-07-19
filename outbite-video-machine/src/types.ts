@@ -7,10 +7,17 @@ export type Caption = {
   endSeconds: number;
   text: string;
   emphasis?: string[];
+  /** Word-level timing derived from neural TTS sentence boundaries. */
+  wordTimings?: Array<{
+    text: string;
+    startSeconds: number;
+    endSeconds: number;
+  }>;
 };
 
 export type CaptionsFile = {
   version: string;
+  notes?: string;
   captions: Caption[];
 };
 
@@ -21,6 +28,19 @@ export type MealSide = {
   protein: number;
   highlight: boolean;
   badge: string;
+};
+
+/** Timed upgrade beats — swap story across the cut (fries → drink → full). */
+export type MealBeat = {
+  id: string;
+  startSeconds: number;
+  endSeconds: number;
+  hook: string;
+  deltaLabel: string;
+  left: MealSide;
+  right: MealSide;
+  beforeImages: string[];
+  afterImages: string[];
 };
 
 export type Campaign = {
@@ -54,8 +74,10 @@ export type Campaign = {
     };
   };
   overlays?: {
-    /** Opaque Chinese-subtitle cover — keep false on clean-plate footage */
+    /** Soft glass caption backdrop behind English karaoke */
     subtitleCover?: boolean;
+    /** Blur band over burned-in Chinese dialogue glyphs */
+    chineseBlur?: boolean;
     foodHeaderStyle?: "opaque" | "glass";
   };
   characters: {
@@ -66,6 +88,8 @@ export type Campaign = {
     left: MealSide;
     right: MealSide;
   };
+  /** Optional multi-swap storyboard for FoodComparison */
+  mealBeats?: MealBeat[];
   nutritionNote: string;
   disclaimer: string;
   cta: {
@@ -79,6 +103,8 @@ export type Campaign = {
     foodHeader: { top: number; bottom: number; left: number; right: number };
     subtitlePanel: { top: number; bottom: number; left: number; right: number };
     captionSafe: { left: number; right: number; top: number; bottom: number };
+    /** Thin band covering burned-in Chinese dialogue under English captions */
+    chineseBlur?: { top: number; bottom: number; left: number; right: number };
     speakerLabels: { leftX: number; rightX: number; y: number };
   };
   appDemo: {
@@ -99,6 +125,15 @@ export type Campaign = {
       enabled: boolean;
     }>;
     useVoiceOverWhenPresent: boolean;
+    /** Soft instrumental bed under VO — keep volume low vs dialogue. */
+    musicBed?: {
+      enabled: boolean;
+      file: string;
+      /** 0–1 Remotion volume. Dialogue-safe bed ≈ 0.10–0.14. */
+      volume?: number;
+      fadeInSeconds?: number;
+      fadeOutSeconds?: number;
+    };
   };
 };
 

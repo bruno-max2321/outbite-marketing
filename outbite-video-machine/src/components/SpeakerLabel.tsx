@@ -91,19 +91,19 @@ const SideChip: React.FC<{
     <div
       style={{
         position: "absolute",
-        padding: "7px 12px",
-        borderRadius: 8,
+        padding: "5px 10px",
+        borderRadius: 6,
         background: active ? activeBg : idleBg,
         color: theme.brand.white,
         fontFamily: theme.fonts.body,
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: 800,
-        letterSpacing: 0.8,
+        letterSpacing: 0.6,
         textTransform: "uppercase",
         border: active
-          ? `1.5px solid ${isLeft ? "rgba(255,220,160,0.55)" : "rgba(200,240,108,0.55)"}`
-          : "1px solid rgba(255,255,255,0.08)",
-        boxShadow: active ? "0 4px 14px rgba(0,0,0,0.22)" : "none",
+          ? `1px solid ${isLeft ? "rgba(255,220,160,0.45)" : "rgba(200,240,108,0.45)"}`
+          : "1px solid rgba(255,255,255,0.06)",
+        boxShadow: active ? "0 2px 10px rgba(0,0,0,0.18)" : "none",
         ...style,
       }}
     >

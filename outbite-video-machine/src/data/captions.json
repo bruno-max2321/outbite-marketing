@@ -1,101 +1,12 @@
 {
-  "version": "B",
+  "version": "G-retention-centered",
+  "notes": "Fixed six-turn framework with centered 2-word karaoke pages. Generated VO replaces these with sentence-anchored word timings.",
   "captions": [
-    {
-      "id": "cap-01",
-      "speaker": "right",
-      "startSeconds": 0.15,
-      "endSeconds": 3.2,
-      "text": "Same restaurant. Same Big Mac.",
-      "emphasis": ["Big Mac"]
-    },
-    {
-      "id": "cap-02",
-      "speaker": "right",
-      "startSeconds": 3.2,
-      "endSeconds": 6.27,
-      "text": "The side you pick changes everything.",
-      "emphasis": ["side", "everything"]
-    },
-    {
-      "id": "cap-03",
-      "speaker": "left",
-      "startSeconds": 6.27,
-      "endSeconds": 10.04,
-      "text": "But the fries look so good… how do I even compare?",
-      "emphasis": ["fries", "compare"]
-    },
-    {
-      "id": "cap-04",
-      "speaker": "right",
-      "startSeconds": 10.04,
-      "endSeconds": 13.0,
-      "text": "Fries can add hundreds of extra calories.",
-      "emphasis": ["hundreds", "calories"]
-    },
-    {
-      "id": "cap-05",
-      "speaker": "right",
-      "startSeconds": 13.0,
-      "endSeconds": 16.06,
-      "text": "I scan the menu with Outbite first.",
-      "emphasis": ["Outbite"]
-    },
-    {
-      "id": "cap-06",
-      "speaker": "left",
-      "startSeconds": 16.06,
-      "endSeconds": 19.1,
-      "text": "How do I know what's better for my goals?",
-      "emphasis": ["goals"]
-    },
-    {
-      "id": "cap-07",
-      "speaker": "left",
-      "startSeconds": 19.1,
-      "endSeconds": 22.01,
-      "text": "Every option looks the same to me.",
-      "emphasis": ["same"]
-    },
-    {
-      "id": "cap-08",
-      "speaker": "right",
-      "startSeconds": 22.01,
-      "endSeconds": 25.6,
-      "text": "Outbite recommends the best fit for you.",
-      "emphasis": ["Outbite", "best fit"]
-    },
-    {
-      "id": "cap-09",
-      "speaker": "right",
-      "startSeconds": 25.6,
-      "endSeconds": 28.6,
-      "text": "Big Mac + baked potato — smarter pick.",
-      "emphasis": ["smarter pick"]
-    },
-    {
-      "id": "cap-10",
-      "speaker": "right",
-      "startSeconds": 28.6,
-      "endSeconds": 30.21,
-      "text": "Same craving. Better choice.",
-      "emphasis": ["Better choice"]
-    },
-    {
-      "id": "cap-11",
-      "speaker": "left",
-      "startSeconds": 30.21,
-      "endSeconds": 33.2,
-      "text": "Okay… show me the smarter order.",
-      "emphasis": ["smarter order"]
-    },
-    {
-      "id": "cap-12",
-      "speaker": "left",
-      "startSeconds": 33.2,
-      "endSeconds": 34.0,
-      "text": "I'm listening.",
-      "emphasis": []
-    }
+    { "id": "cap-01", "speaker": "right", "startSeconds": 0.3, "endSeconds": 6.35, "text": "Cut four hundred ten calories at McDonald's and keep the Big Mac. Here's the order.", "emphasis": ["calories", "Big Mac"] },
+    { "id": "cap-02", "speaker": "left", "startSeconds": 7.05, "endSeconds": 9.75, "text": "I still get the Big Mac?", "emphasis": ["Big Mac"] },
+    { "id": "cap-03", "speaker": "right", "startSeconds": 10.35, "endSeconds": 15.75, "text": "Big Mac, medium fries, Diet Coke. Twelve eighty down to eight seventy.", "emphasis": ["fries", "Diet Coke"] },
+    { "id": "cap-04", "speaker": "left", "startSeconds": 16.4, "endSeconds": 21.45, "text": "Same burger, four hundred ten less? Bro, how?", "emphasis": ["less"] },
+    { "id": "cap-05", "speaker": "right", "startSeconds": 22.15, "endSeconds": 29.75, "text": "I use Outbite. It finds the lowest calorie swaps that still taste good, then gives you the exact order.", "emphasis": ["Outbite", "swaps"] },
+    { "id": "cap-06", "speaker": "left", "startSeconds": 30.25, "endSeconds": 33.8, "text": "I'm downloading Outbite before lunch.", "emphasis": ["downloading", "Outbite"] }
   ]
 }

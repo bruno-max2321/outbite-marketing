@@ -14,14 +14,19 @@ export const theme = {
     chalk: "#F2F7F3",
     sand: "#E6E0D4",
     caution: "#D97706",
+    /** LeanBites-style impulse / high-cal plaque */
+    impulseRed: "#E11D2E",
     white: "#FFFFFF",
+    /** CapCut / LeanBites active word — yellow punches on TikTok */
+    captionHighlight: "#FFE600",
     panel: "rgba(20, 32, 24, 0.92)",
     panelSoft: "rgba(20, 32, 24, 0.78)",
   },
   fonts: {
     display: '"Syne", "Segoe UI", sans-serif',
     body: '"Figtree", "Segoe UI", sans-serif',
-    caption: '"Figtree", "Segoe UI", sans-serif',
+    /** Viral karaoke — Montserrat Black via FontLoader */
+    caption: '"Montserrat", "Arial Black", Impact, sans-serif',
   },
   gradients: {
     atmosphere:

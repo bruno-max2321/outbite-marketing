@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { AppDemo } from "../components/AppDemo";
+import { ChineseBlur } from "../components/ChineseBlur";
 import { Disclaimer } from "../components/Disclaimer";
 import { EndCard } from "../components/EndCard";
 import { EnglishCaptions } from "../components/EnglishCaptions";
@@ -9,21 +10,24 @@ import { FoodComparison } from "../components/FoodComparison";
 import { SourceVideo } from "../components/SourceVideo";
 import { SpeakerLabel } from "../components/SpeakerLabel";
 import { SubtitleCover } from "../components/SubtitleCover";
+import { BackgroundMusic } from "../components/BackgroundMusic";
 import { VoiceOver } from "../components/VoiceOver";
 import { theme } from "../styles/theme";
 import type { OutbiteComparisonProps } from "../types";
 
 /**
  * Layer stack (bottom → top) — clean-plate 0718 (~39.27s @ 60fps):
- * 1. Source video (near-silent AAC; muted by default)
- * 2. Compact glass food header in open headroom
- * 3. Soft caption backdrop (only while a caption is active)
- * 4. English captions (speaker-aligned + Impulse/Outbite chip)
- * 5. Dual speaker labels
- * 6. Optional app demo (~23–30s, Outbite side)
- * 7. End card CTA (last ~5s)
- * 8. Disclaimer
- * + VoiceOver sequences when WAV files exist
+ * left = fat/Impulse · right = fit/Outbite
+ * 1. Source video (muted by default)
+ * 2. Outbite It food hook (RevealHero/Morph timings + transparent PNGs)
+ * 3. Optional soft caption backdrop (off in Version C)
+ * 4. Chinese dialogue blur band (burned-in glyphs)
+ * 5. Karaoke English captions (2–3 words, CapCut style) — same position
+ * 6. Dual speaker labels (Impulse / Outbite)
+ * 7. Optional Outbite It app demo (~23–30s, fit side)
+ * 8. End card CTA (last ~5s)
+ * 9. Disclaimer
+ * + Soft music bed + VoiceOver sequences when WAV files exist
  */
 export const OutbiteComparison: React.FC<OutbiteComparisonProps> = ({
   campaign,
@@ -45,11 +49,13 @@ export const OutbiteComparison: React.FC<OutbiteComparisonProps> = ({
         <SourceVideo campaign={campaign} />
         <FoodComparison campaign={campaign} />
         <SubtitleCover campaign={campaign} captions={captions} />
+        <ChineseBlur campaign={campaign} />
         <EnglishCaptions campaign={campaign} captions={captions} />
         <SpeakerLabel campaign={campaign} captions={captions} />
         {showAppDemo ? <AppDemo campaign={campaign} /> : null}
         {showEndCard ? <EndCard campaign={campaign} /> : null}
         {showDisclaimer ? <Disclaimer campaign={campaign} /> : null}
+        <BackgroundMusic campaign={campaign} />
         <VoiceOver campaign={campaign} />
       </AbsoluteFill>
     </FontLoader>

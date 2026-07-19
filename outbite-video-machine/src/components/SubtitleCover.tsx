@@ -15,29 +15,27 @@ type Props = {
 
 /**
  * Soft caption backdrop — only while a caption is active.
- * Not a permanent Chinese-text cover (0718 is a clean plate).
  * Set campaign.overlays.subtitleCover = false to disable entirely.
  */
 export const SubtitleCover: React.FC<Props> = ({ campaign, captions }) => {
-  if (campaign.overlays?.subtitleCover === false) {
-    return null;
-  }
-
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const seconds = frame / fps;
+  const enabled = campaign.overlays?.subtitleCover !== false;
   const r = campaign.regions.subtitlePanel;
   const padY = 8;
 
   const active = useMemo(
     () =>
-      captions?.captions.find(
-        (c) => seconds >= c.startSeconds && seconds < c.endSeconds,
-      ),
-    [captions?.captions, seconds],
+      enabled
+        ? captions?.captions.find(
+            (c) => seconds >= c.startSeconds && seconds < c.endSeconds,
+          )
+        : undefined,
+    [captions?.captions, enabled, seconds],
   );
 
-  if (!active) {
+  if (!enabled || !active) {
     return null;
   }
 

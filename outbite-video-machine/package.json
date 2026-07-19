@@ -12,6 +12,12 @@
     "render:campaign": "node scripts/render-variants.mjs",
     "inspect": "node scripts/inspect-video.mjs",
     "prepare-audio": "node scripts/prepare-audio.mjs",
+    "vo:generate": "node scripts/generate-vo.mjs",
+    "vo:clean": "node scripts/generate-vo.mjs --clean",
+    "vo:clean-all": "node scripts/generate-vo.mjs --clean-all",
+    "studio:vo": "node scripts/preview-vo.mjs",
+    "variant:build": "node scripts/build-variant.mjs",
+    "render:batch": "node scripts/render-batch.mjs",
     "typecheck": "tsc --noEmit",
     "upgrade": "remotion upgrade"
   },

@@ -1,14 +1,15 @@
 import React from "react";
 import {
   AbsoluteFill,
+  Img,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
 import { theme } from "../styles/theme";
 import type { Campaign } from "../types";
-import { OutbiteMark } from "./FoodPlaceholders";
 
 type Props = {
   campaign: Campaign;
@@ -73,12 +74,15 @@ export const EndCard: React.FC<Props> = ({ campaign }) => {
         }}
       />
 
-      <OutbiteMark
+      <Img
+        src={staticFile("branding/outbite-logo.png")}
         style={{
-          width: 128,
-          height: 128,
+          width: 172,
+          height: 172,
+          objectFit: "contain",
           opacity: enter,
           transform: `translateY(${titleY}px)`,
+          filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.24))",
         }}
       />
 

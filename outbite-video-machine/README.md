@@ -11,6 +11,19 @@ Remotion + TypeScript project that turns a clean split-screen comparison perform
 
 ## Quick start
 
+Windows requirements:
+
+- Node.js 20+
+- Python 3 (`python` available in PowerShell)
+- FFmpeg available in `PATH`
+
+```powershell
+git clone https://github.com/bruno-max2321/outbite-marketing.git
+cd outbite-marketing\outbite-video-machine
+npm install
+python -m pip install edge-tts
+```
+
 ```bash
 cd "c:\Users\PC\Desktop\outbite marketing\outbite-video-machine"
 npm install
@@ -25,6 +38,8 @@ Studio opens `OutbiteComparison` — **1080×1920 @ 60fps**, **2356 frames / 39.
 npm run render              # full H.264 → out/outbite-comparison.mp4
 npm run render:preview      # half-scale preview
 npm run render:campaign     # variant script (scripts/render-variants.mjs)
+npm run render:batch        # all 5 variants → out/batch/
+npm run render:batch -- --only wendys-baconator  # one variant only
 ```
 
 Output codec: **H.264**, **yuv420p**, AAC audio.
@@ -52,8 +67,8 @@ Replaced the old SaveTik download (~19s with burned-in Chinese food labels/cutou
 |-------|----------|
 | Source video | `public/source/0718-1080.mp4` (muted; near-silent AAC on master) |
 | Food header | Compact glass strip (~0–14.5%) — brand + meal chips |
-| Caption backdrop | Soft panel **only while a caption is active** (not a permanent Chinese cover) |
-| English captions | Speaker-aligned + Impulse/Outbite chip (`captions.json` Version B) |
+| Caption backdrop | Off by default (`subtitleCover: false`) — viral karaoke needs no glass panel |
+| English captions | CapCut-style karaoke 2–3 words, Montserrat Black + yellow highlight (`captions.json` Version C) |
 | Speaker labels | Dual chips; active side highlights |
 | App demo | Compact phone UI ~23.2–29.8s on Outbite side |
 | End card | Brand CTA **34.0–39.27s** (~5s) |
@@ -70,32 +85,33 @@ Compositions in `src/Root.tsx`:
 
 | Beat | Seconds | Notes |
 |------|---------|--------|
-| Captions 01–10 | 0.15–30.21 | Dialogue beats (Impulse / Outbite) |
-| Captions 11–12 | 30.21–34.0 | Impulse concedes |
-| App demo | 23.2–29.8 | Overlaps Outbite pitch |
-| End card | 34.0–39.27 | Strong CTA |
+| Captions Version C | 0.12–34.0 | Karaoke chunks; left=fat, right=fit |
+| App demo | 23.2–29.8 | Outbite It UI lines on fit side |
+| End card | 34.0–39.27 | Search OUTBITE CTA |
 
-Speaker windows (approx):
+Speaker windows (you — left fat / right fit):
 
-| Seconds | Speaker |
-|---------|---------|
-| 0.00 – 6.27 | Outbite (right) |
-| 6.27 – 10.04 | Impulse (left) |
-| 10.04 – 16.06 | Outbite |
-| 16.06 – 22.01 | Impulse |
-| 22.01 – 30.21 | Outbite |
-| 30.21 – 34.0 | Impulse |
-| 34.0 – 39.27 | End card CTA |
+| Seconds | Side | Role |
+|---------|------|------|
+| 0.00 – 6.27 | Right (fit) | Outbite |
+| 6.27 – 10.04 | Left (fat) | Impulse |
+| 10.04 – 16.06 | Right (fit) | Outbite |
+| 16.06 – 22.01 | Left (fat) | Impulse |
+| 22.01 – 30.21 | Right (fit) | Outbite |
+| 30.21 – 34.0 | Left (fat) | Impulse concedes |
+| 34.0 – 39.27 | — | End card CTA |
+
+Meal demo aligned to app `guiltyIntents`: Big Mac Meal **1280** → Big Mac · Med Fries · Diet Coke **870** (−410).
 
 ---
 
 ## Execution order
 
 1. `npm run inspect` — confirm duration/fps against `campaign.json`
-2. `npm run studio` — QC overlay alignment
-3. Swap placeholders (logo, food photos) when ready
-4. Record VO → `npm run prepare-audio` → enable lines in `campaign.json`
-5. `npm run render`
+2. `npm run studio` — QC overlays (silent by default)
+3. Optional neural VO preview: `npm run studio:vo -- --variant mcdonalds-big-mac` then refresh Studio
+4. Mass-produce 5 unique videos: `npm run render:batch` (VO generated → rendered → deleted)
+5. Clear preview VO: `npm run studio:vo -- --clear`
 
 ---
 
@@ -114,11 +130,16 @@ Set `"subtitleCover": false` to remove the backdrop entirely (captions stay read
 
 ---
 
-## Voice-over
+## Voice-over (mass production)
 
-Source audio is muted (and near-silent on 0718). Captions carry the story until VO lands.
+Source audio is muted. **Do not bake WAVs into the repo** — that saturates disk at scale.
 
-See `public/audio/README.md` for the 12-line timing table matching Version B captions.
+- Neural VO via `edge-tts` on demand → `public/audio/.generated/` (gitignored, ephemeral)
+- Each line is fitted into its caption window so karaoke stays locked
+- 5 unique variants in `scripts/lib/intents.mjs` (different chains, scripts, voices)
+- `npm run render:batch` generates → renders → **deletes** VO after each video
+
+See `public/audio/README.md`.
 
 ---
 
@@ -129,9 +150,9 @@ See `public/audio/README.md` for the 12-line timing table matching Version B cap
 | Source 0718 master | `public/source/0718.mp4` | Kept (2160×3840) |
 | Source 0718 proxy | `public/source/0718-1080.mp4` | **Active in composition** |
 | Archive | `public/source/original.mp4` | Kept |
-| Official Outbite logo | `public/branding/outbite-mark.svg` | Placeholder |
-| Food photos | `public/food/` | Placeholder SVGs |
-| Voice-over WAVs | `public/audio/line-0N.wav` | Missing |
+| Official Outbite logo | `public/branding/outbite-logo.png` | Active |
+| Food photos | `public/food/` | Meal-specific assets for all 5 variants |
+| Voice-over | `public/audio/.generated/` | Ephemeral (never commit) |
 
 > `ChatGPT Image 18 jul 2026, 05_33_03 p.m..png` is a **wall texture**, not food art — not wired into `public/food/`.
 
